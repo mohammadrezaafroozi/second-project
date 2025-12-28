@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
+import { AuthPanel } from "@/components/auth-panel";
 
 export const dynamic = 'force-dynamic';
 
@@ -19,6 +20,9 @@ export default async function Dashboard() {
         <div className="bg-white p-6 rounded-lg shadow max-w-3xl mx-auto">
           <p className="text-purple-600 text-center">Welcome to your dashboard, {session.user?.name}!</p>
         </div>
+          <div className="absolute bottom-10 left-10">
+            <AuthPanel session={session} />
+          </div>
       </div>
     </div>
   );

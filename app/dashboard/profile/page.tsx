@@ -1,14 +1,15 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
+import { AuthPanel } from "@/components/auth-panel";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export default async function Profile() {
   const session = await auth();
-  
+
   if (!session) {
-    redirect('/login');
+    redirect("/login");
   }
 
   return (
@@ -19,9 +20,10 @@ export default async function Profile() {
         <div className="bg-white p-6 rounded-lg shadow max-w-3xl mx-auto">
           <p className="text-purple-600 text-center">Profile page content</p>
         </div>
+        <div className="absolute bottom-10 left-2">
+          <AuthPanel session={session} />
+        </div>
       </div>
     </div>
   );
 }
-
-
