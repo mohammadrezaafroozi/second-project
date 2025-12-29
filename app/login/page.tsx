@@ -12,7 +12,7 @@ export default  async function Login() {
     }
   return (
     <div className="min-h-screen">
-      <div className="overflow-hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+      <div className="overflow-hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full md:max-w-xl">
         <div className="p-6 min-h-96 relative">
           <div className="space-y-4">
             <h1 className="text-2xl font-bold text-purple-950">
